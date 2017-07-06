@@ -46,6 +46,9 @@ app.post('/rooms',upload.any(),(req,res)=>{
     // //     res.status(400).send(e)
     // // });
 })
+app.post('/',(req,res)=>{
+    res.send('sorry')
+})
 app.post('/searchRooms',(req,res)=>{
     let body=_.pick(req.body, ['city','availableTo','availableFrom','capacity']);
     console.log('search')
