@@ -1,4 +1,4 @@
-require('./config/config');
+require('./server/config/config');
 const express = require('express');
 const bodyParser = require('body-parser');
 const _ = require('lodash');
@@ -6,15 +6,14 @@ const base64_arraybuffer = require('base64-arraybuffer')
 var cors=require('cors');
 var multer = require('multer');
 var upload = multer({ dest: 'uploads/' })
-let path = require('path')
 const fs =  require('fs')
 
 const {ObjectID} = require('mongodb')
-const {mongoose} = require('./db/mongoose');
-const {User} = require('./models/user');
-const {Room} = require('./models/room');
+const {mongoose} = require('./server/db/mongoose');
+const {User} = require('./server/models/user');
+const {Room} = require('./server/models/room');
 const  port = process.env.PORT || 3000 ;
-const  {authenticate} = require('./middleware/authenticate')
+const  {authenticate} = require('./server/middleware/authenticate')
 
 let app =  express();
 app.use(bodyParser.json());
@@ -47,10 +46,8 @@ app.post('/rooms',upload.any(),(req,res)=>{
     // //     res.status(400).send(e)
     // // });
 })
-app.get('/',(req,res)=>{
-    res.sendFile(path.join(__dirname + '/../public/index.html'));
 
-})
+app.use('/', express.static('public'))
 app.post('/searchRooms',(req,res)=>{
     let body=_.pick(req.body, ['city','availableTo','availableFrom','capacity']);
     console.log('search')
