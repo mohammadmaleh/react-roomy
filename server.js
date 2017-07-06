@@ -6,6 +6,7 @@ const base64_arraybuffer = require('base64-arraybuffer')
 var cors=require('cors');
 var multer = require('multer');
 var upload = multer({ dest: 'uploads/' })
+let path = require('path')
 const fs =  require('fs')
 
 const {ObjectID} = require('mongodb')
@@ -18,6 +19,8 @@ const  {authenticate} = require('./server/middleware/authenticate')
 let app =  express();
 app.use(bodyParser.json());
 app.use(cors({origin:true,credentials: true,allowedHeaders:['Content-Type','multipart/form-data' , 'Authorization','x-auth'],exposedHeaders:['Content-Type','multipart/form-data' , 'Authorization','x-auth']}));
+app.use('/', express.static('public'))
+
 app.post('/rooms',upload.any(),(req,res)=>{
     let body =  _.pick(req.body, ['title','description','stars','reviewCount',
         'rate','oldPrice','newPrice','street','capacity','favorite','size','_creator','equipment','availableFrom','availableTo','city']);
@@ -47,7 +50,6 @@ app.post('/rooms',upload.any(),(req,res)=>{
     // // });
 })
 
-app.use('/', express.static('public'))
 app.post('/searchRooms',(req,res)=>{
     let body=_.pick(req.body, ['city','availableTo','availableFrom','capacity']);
     console.log('search')
