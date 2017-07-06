@@ -47,7 +47,8 @@ app.post('/rooms',upload.any(),(req,res)=>{
     // // });
 })
 app.get('/',(req,res)=>{
-    res.send('sorry')
+    res.sendFile(path.join(__dirname + '/public/index.html'));
+
 })
 app.post('/searchRooms',(req,res)=>{
     let body=_.pick(req.body, ['city','availableTo','availableFrom','capacity']);

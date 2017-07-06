@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run clean && webpack",
     "clean": "rimraf public",
-    "serve": "webpack-dev-server ",
-    "start":"node server/server.js"
+    "serve": "webpack-dev-server",
+    "start":"node server/server.js && npm run build --isProduction=true"
   },
   "engines": {
     "node":"8.0.0"
