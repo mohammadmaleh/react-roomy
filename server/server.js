@@ -12,7 +12,7 @@ const {ObjectID} = require('mongodb')
 const {mongoose} = require('./db/mongoose');
 const {User} = require('./models/user');
 const {Room} = require('./models/room');
-const  port = process.env.PORT;
+const  port = process.env.PORT || 3000 ;
 const  {authenticate} = require('./middleware/authenticate')
 
 let app =  express();
