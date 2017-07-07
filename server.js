@@ -19,7 +19,7 @@ const  {authenticate} = require('./server/middleware/authenticate')
 let app =  express();
 app.use(bodyParser.json());
 app.use(cors({origin:true,credentials: true,allowedHeaders:['Content-Type','multipart/form-data' , 'Authorization','x-auth'],exposedHeaders:['Content-Type','multipart/form-data' , 'Authorization','x-auth']}));
-app.use(express.static(path.join(__dirname, 'pubic')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', function(request, response) {
     response.sendFile(__dirname + '/public/index.html');
 });
