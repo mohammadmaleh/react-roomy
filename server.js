@@ -19,14 +19,10 @@ const  {authenticate} = require('./server/middleware/authenticate')
 let app =  express();
 app.use(bodyParser.json());
 app.use(cors({origin:true,credentials: true,allowedHeaders:['Content-Type','multipart/form-data' , 'Authorization','x-auth'],exposedHeaders:['Content-Type','multipart/form-data' , 'Authorization','x-auth']}));
-
-if (process.env){
-    process.env.PWD = process.cwd();
-    app.use('/',express.static(path.join(process.env.PWD, 'public')));
-}
-else
-    app.use('/', express.static(__dirname + '/public'))
-
+app.use(express.static(path.join(__dirname, 'pubic')));
+app.get('/', function(request, response) {
+    response.sendFile(__dirname + '/public/index.html');
+});
 app.post('/rooms',upload.any(),(req,res)=>{
     let body =  _.pick(req.body, ['title','description','stars','reviewCount',
         'rate','oldPrice','newPrice','street','capacity','favorite','size','_creator','equipment','availableFrom','availableTo','city']);
