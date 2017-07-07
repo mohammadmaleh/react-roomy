@@ -137,7 +137,7 @@ module.exports = {
     },
     output: {
         path: buildPath,
-        publicPath: '/public',
+        publicPath: '',
         filename: 'app-[hash].js',
     },
     module: {
