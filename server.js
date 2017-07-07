@@ -21,9 +21,9 @@ let app =  express();
 app.use(bodyParser.json());
 app.use(cors({origin:true,credentials: true,allowedHeaders:['Content-Type','multipart/form-data' , 'Authorization','x-auth'],exposedHeaders:['Content-Type','multipart/form-data' , 'Authorization','x-auth']}));
 app.use(express.static('public'));
-// app.get('/', function(request, response) {
-//     response.sendFile(__dirname+'public/index.html');
-// });
+app.get('/', function(request, response) {
+    response.sendFile(__dirname+'/public/index.html');
+});
 app.post('/rooms',upload.any(),(req,res)=>{
     let body =  _.pick(req.body, ['title','description','stars','reviewCount',
         'rate','oldPrice','newPrice','street','capacity','favorite','size','_creator','equipment','availableFrom','availableTo','city']);
