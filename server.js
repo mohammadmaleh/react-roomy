@@ -16,6 +16,7 @@ const {Room} = require('./server/models/room');
 const  port = process.env.PORT || 3000 ;
 const  {authenticate} = require('./server/middleware/authenticate')
 
+
 let app =  express();
 app.use(bodyParser.json());
 app.use(cors({origin:true,credentials: true,allowedHeaders:['Content-Type','multipart/form-data' , 'Authorization','x-auth'],exposedHeaders:['Content-Type','multipart/form-data' , 'Authorization','x-auth']}));
