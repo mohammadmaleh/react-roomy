@@ -53,7 +53,6 @@ export default function configureStore() {
                 compose(
                     autoRehydrate(),
                     applyMiddleware(...middlewares),
-                    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 
                 ),
             );
