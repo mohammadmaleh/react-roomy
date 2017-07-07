@@ -1,5 +1,6 @@
 import axios from 'axios'
-const baseUrl = process.env.NODE_ENV ? '/':'http://localhost:3000'
+const baseUrl = process.env.NODE_ENV ? '/' :'http://localhost:3000'
+console.log(baseUrl)
 export const saveRoom = (roomItem)=>{
     return axios({
         method: 'post',
