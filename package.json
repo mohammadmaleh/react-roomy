@@ -8,8 +8,8 @@
     "build": "npm run clean && webpack",
     "clean": "rimraf public",
     "serve": "webpack-dev-server",
-    "start":" node server.js",
-    "heroku-postbuild": "npm run build --isProduction=true "
+    "start":" npm run build --isProduction=true  ",
+    "heroku-postbuild": "node server.js"
   },
   "engines": {
     "node":"8.0.0",
