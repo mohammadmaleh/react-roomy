@@ -222,12 +222,11 @@ var _axios2 = _interopRequireDefault(_axios);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var baseUrl = 'http://localhost:3000';
 var signUpAPI = exports.signUpAPI = function signUpAPI(email, password, username) {
     console.log(email, password, username);
     return (0, _axios2.default)({
         method: 'post',
-        url: baseUrl + '/users/signup',
+        url: '/users/signup',
         data: {
             email: email,
             password: password,
@@ -239,7 +238,7 @@ var loginAPI = exports.loginAPI = function loginAPI(email, password) {
     console.log(email, password);
     return (0, _axios2.default)({
         method: 'post',
-        url: baseUrl + '/users/login',
+        url: '/users/login',
         data: {
             email: email,
             password: password
@@ -2750,4 +2749,4 @@ module.exports = __webpack_require__("./app.js");
 /***/ })
 
 },[2]);
-//# sourceMappingURL=app-f950daac950e92ad2e45.js.map
+//# sourceMappingURL=app-1b6398ca1b87de708bc0.js.map
