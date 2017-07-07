@@ -9,7 +9,6 @@
     "clean": "rimraf public",
     "serve": "webpack-dev-server",
     "start":" node server.js",
-    "postinstall": "webpack -p --config ./webpack.config.js --progress --isProduction=true"
   },
   "engines": {
     "node":"8.0.0",
