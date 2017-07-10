@@ -69,6 +69,10 @@ var Room =  mongoose.model('Room',{
         type:Number,
         required:true
     },
+    offersWifi:{
+        type:Boolean,
+        required:true
+    },
     _creator:{
         type: mongoose.Schema.Types.ObjectId,
         required:true,

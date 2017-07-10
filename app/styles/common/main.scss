@@ -35,13 +35,13 @@ html{
   margin-right: 15px;
 }
 .btn-success:link,.btn-success:visited {
-  background-color: #2ecc71!important;
-  border: 1px solid #2ecc71!important;
+  background-color: $green-color!important;
+  border: 1px solid $green-color!important;
   margin-right: 15px;
   color: $white-color!important;
   &:hover,&:active{
-    background-color: #2ecc71!important;
-    border : 1px solid #2ecc71!important; /* to make* to make the two buttons the same hight and width */
+    background-color: $green-color!important;
+    border : 1px solid $green-color!important; /* to make* to make the two buttons the same hight and width */
 
   }
 }

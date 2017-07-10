@@ -104,6 +104,7 @@ class RoomItem extends Component{
 
         let {roomObject} = this.props;
         // let base64String = btoa(String.fromCharCode(...new Uint8Array(roomObject.mainImage.data.data)));
+        console.log(roomObject)
         let image =base64_arraybuffer.encode(roomObject.mainImage.data.data)
         return(
             <div className="row room-item " onClick={this.showModal}>
@@ -127,7 +128,8 @@ class RoomItem extends Component{
                         {roomObject.city}, {roomObject.street}
                     </div>
                     <div>
-                        has a wifi{roomObject.offersWifi}
+                        {roomObject.offersWifi}
+                        {roomObject.offersWifi ? <div className="offers-wifi"> <i className="fa fa-wifi" aria-hidden="true"></i> Free Wifi </div> : <div className="no-wifi"><i className="fa fa-meh-o" aria-hidden="true"></i>No Wifi </div>}
                     </div>
                 </div>
                 <div className="column large-3  small-6 room-item-side">

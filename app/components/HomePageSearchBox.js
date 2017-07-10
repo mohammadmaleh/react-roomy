@@ -21,6 +21,7 @@ class HomePageSearchBox extends Component{
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChangeAvailableTo = this.handleChangeAvailableTo.bind(this)
         this.handleChangeAvailableFrom = this.handleChangeAvailableFrom.bind(this)
+        this.handleKeyPress = this.handleKeyPress.bind(this)
         this.handleCity = this.handleCity.bind(this)
         this.state = {
             availableTo:moment().startOf('day').add(1,'Day'),
@@ -35,6 +36,13 @@ class HomePageSearchBox extends Component{
 
 
         this.setState({capacity:e.target.value})
+    }
+    handleKeyPress(e){
+        console.log('ehre')
+        if(e.charCode==13){
+            alert('Enter clicked!!!');
+            console.log(this.props)
+        }
     }
     handleSubmit (e){
         e.stopPropagation();
@@ -64,16 +72,7 @@ class HomePageSearchBox extends Component{
     handleCity(e){
 
         this.setState({city:e.target.value})
-        console.log(e.key)
-        if(e.key === 'Enter'){
-            this.handleSubmit(e)
-            console.log(this)
-            this.props.history.push("/search-page")
 
-            setTimeout(()=>{
-
-            },1000)
-        }
 
 
     }
@@ -92,7 +91,7 @@ class HomePageSearchBox extends Component{
                             {/*options={['istanbul', 'berlin', 'urfa', 'Ringo']}*/}
                             {/*maxVisible={2}*/}
                         {/*/>*/}
-                        <input type="text" onKeyPress={this.handleCity}/>
+                        <input type="text" onChange={this.handleCity} onKeyPress={this.handleKeyPress} autoFocus/>
                     </div>
                     <div className="column large-2 main-search-box-item">
                         <p>Check in</p>

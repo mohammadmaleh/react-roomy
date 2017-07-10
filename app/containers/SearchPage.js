@@ -67,7 +67,7 @@ class SearchPage extends Component {
                 <FilterDiv></FilterDiv>
             </div>
             <div className="column large-9">
-                <div> {filteredRoomList.length > 0 ? filteredRoomList: <div className="empty-search-result"><div><p>Your search had 0 results.</p></div></div>} </div>
+                <div> {filteredRoomList.length > 0 ? filteredRoomList : roomsAreLoaded ? <div className="empty-search-result"><div><p>Your search had 0 results.</p></div></div>:''} </div>
             </div>
                 <div className="page-loader">
                 {roomsAreLoaded ? '' : <Loader color="#EF4836" size="16px" margin="4px"/>}

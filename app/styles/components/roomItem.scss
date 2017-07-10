@@ -40,9 +40,24 @@
     }
 
   }
+
   .room-item-main{
     background-color: $grey-color;
     height: 100%;
+    .offers-wifi{
+       position: absolute;
+       color: $green-color;
+       i{
+         margin-right: 3px;
+       }
+     }
+    .no-wifi{
+      position: absolute;
+      color: $red-color;
+      i{
+        margin-right: 3px;
+      }
+    }
     .room-item-title{
       font-weight: bold;
       -webkit-transition: color 0.2s;

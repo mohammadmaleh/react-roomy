@@ -29,7 +29,7 @@ app.get('*', (req, res) => {
 })
 app.post('/rooms',upload.any(),(req,res)=>{
     let body =  _.pick(req.body, ['title','description','stars','reviewCount',
-        'rate','oldPrice','newPrice','street','capacity','favorite','size','_creator','equipment','availableFrom','availableTo','city']);
+        'rate','oldPrice','newPrice','street','capacity','favorite','size','_creator','equipment','availableFrom','availableTo','city','offersWifi']);
     var room = new Room(body);
     console.log('post')
     console.log(body)
@@ -62,22 +62,43 @@ app.post('/searchRooms',(req,res)=>{
     if (body.capacity === 'Any')
         body.capacity = 0
     console.log(body)
-    Room.find()
-        .where('city').equals(body.city)
-        .where('availableFrom').lte(body.availableFrom)
-        .where('availableTo').gte(body.availableTo)
-        .where('capacity').gte(body.capacity)
-        .then((rooms)=>{
-        // rooms.mainImage = base64_arraybuffer.encode(rooms[0].mainImage.data))
+    if ( body.city.length > 0){
+        Room.find()
+            .where('city').equals(body.city)
+            .where('availableFrom').lte(body.availableFrom)
+            .where('availableTo').gte(body.availableTo)
+            .where('capacity').gte(body.capacity)
+            .then((rooms)=>{
+                // rooms.mainImage = base64_arraybuffer.encode(rooms[0].mainImage.data))
 
-        res.send({
-            rooms,
+                res.send({
+                    rooms,
 
-        })
-    },(e)=>{
-        res.status(400).send(e)
+                })
+            },(e)=>{
+                res.status(400).send(e)
 
-    })
+            })
+
+    }
+    else{
+        Room.find()
+            .where('availableFrom').lte(body.availableFrom)
+            .where('availableTo').gte(body.availableTo)
+            .where('capacity').gte(body.capacity)
+            .then((rooms)=>{
+                // rooms.mainImage = base64_arraybuffer.encode(rooms[0].mainImage.data))
+
+                res.send({
+                    rooms,
+
+                })
+            },(e)=>{
+                res.status(400).send(e)
+
+            })
+
+    }
 });
 app.get('/rooms/:id',authenticate,(req,res)=>{
     let id = req.params.id;
