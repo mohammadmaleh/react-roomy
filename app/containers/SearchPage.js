@@ -4,6 +4,7 @@ import {getAllRooms} from 'roomsAPI'
 import {connect} from 'react-redux'
 import FilterDiv from 'FilterDiv'
 import {subscribe} from 'redux-subscriber';
+var Loader = require('halogen/PulseLoader');
 
 
 
@@ -14,7 +15,8 @@ class SearchPage extends Component {
         this.state = {
             searchedRooms:null,
             searchedRoomsList:[],
-            filteredRoomList:[]
+            filteredRoomList:[],
+            roomsAreLoaded : false
 
         } ;
         subscribe('setFilters', state => {
@@ -35,6 +37,9 @@ class SearchPage extends Component {
 
 
         getAllRooms(searchItem).then((res)=>{
+                this.setState({
+                    roomsAreLoaded : true
+                })
                 let rooms = res.data.rooms
                 let {filteredRoomList} = this.state;
                 if (rooms.length > 0){
@@ -44,26 +49,34 @@ class SearchPage extends Component {
                         return <RoomItem key={room._id} roomObject={room}/> })
                     this.setState({filteredRoomList: filteredRoomList});
                 }
+                else{
+                    return <div>
+                        <Loader color="#EF4836" size="16px" margin="4px"/>
+
+                    </div>
+                }
+
             })
         ;
     }
 
     render(){
-        const seachedRooms = this.state.searchedRoomsList;
-
-        if (seachedRooms) {
-            let {filteredRoomList} = this.state
-            return <div className="row">
-                <div className="column large-3">
-                    <FilterDiv></FilterDiv>
-                </div>
-                <div className="column large-9">
-                    <div> {filteredRoomList} </div>
-                </div>
+        let {filteredRoomList,roomsAreLoaded} = this.state
+        return <div className="row">
+            <div className="column large-3">
+                <FilterDiv></FilterDiv>
             </div>
-        }
+            <div className="column large-9">
+                <div> {filteredRoomList.length > 0 ? filteredRoomList: <div className="empty-search-result"><div><p>Your search had 0 results.</p></div></div>} </div>
+            </div>
+                <div className="page-loader">
+                {roomsAreLoaded ? '' : <Loader color="#EF4836" size="16px" margin="4px"/>}
+            </div>
 
-        return <div> Loading...</div>;
+
+        </div>
+
+
 
     }
 

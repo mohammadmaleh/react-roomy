@@ -50,7 +50,7 @@ class SignInButton extends Component {
 
     render () {
         const modalStyle = {
-            padding:"0 25px"
+            padding:"0 125px"
         }
         return (
             <div className="sign-in-button">

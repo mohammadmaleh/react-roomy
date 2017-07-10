@@ -17,7 +17,7 @@ var SignOutButton = React.createClass({
 
 
         return (
-            <div className="sign-in-button">
+            <div className="sign-in-button float-right">
                 <a  className="btn btn-ghost"  href="#"  onClick={this.handleSignOut}>Sign out</a>
 
 

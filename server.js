@@ -24,6 +24,9 @@ app.use(express.static('public'));
 app.get('/', function(request, response) {
     response.sendFile(__dirname+'/public/index.html');
 });
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'public/index.html'))
+})
 app.post('/rooms',upload.any(),(req,res)=>{
     let body =  _.pick(req.body, ['title','description','stars','reviewCount',
         'rate','oldPrice','newPrice','street','capacity','favorite','size','_creator','equipment','availableFrom','availableTo','city']);
@@ -56,7 +59,7 @@ app.post('/rooms',upload.any(),(req,res)=>{
 app.post('/searchRooms',(req,res)=>{
     let body=_.pick(req.body, ['city','availableTo','availableFrom','capacity']);
     console.log('search')
-    if (body.capacity === 'any')
+    if (body.capacity === 'Any')
         body.capacity = 0
     console.log(body)
     Room.find()

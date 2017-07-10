@@ -32,3 +32,28 @@
     }
   }
 }
+@media (max-width: 1025px) {
+  .home-page-search-box{
+
+    .search-box{
+    height: 424px;
+    padding-right: 11px;
+  }
+  }
+}
+
+@media (max-width: 750px) {
+  .home-page-search-box{
+    top:65%;
+    .search-box{
+      height: 424px;
+      padding-right: 11px;
+    }
+  }
+
+}
+@media (max-width: 430px) {
+  .header{
+    height: 180px;
+  }
+}

@@ -2,11 +2,29 @@
   border: 1px solid $grey-color;
   cursor: pointer;
   height:130px;
+  margin-top: 6px;
+  form{
+    padding: 0 25px;
+    padding-top: 10px;
+    text-align: center;
+    margin-bottom: 25px;
+    .btn{
+      margin-top: 15px;
+      text-align: center;
+    }
+  }
+
   &:hover{
     -webkit-box-shadow: 10px 10px 36px -12px rgba(179,179,179,0.78);
     -moz-box-shadow: 10px 10px 36px -12px rgba(179,179,179,0.78);
     box-shadow: 10px 10px 36px -12px rgba(179,179,179,0.78);
-
+    .room-item-image{
+      height: 100%;
+      img{
+        opacity: 1;
+        transform: scale(1.15);
+      }
+    }
   }
   .room-item-image{
     padding: 0;

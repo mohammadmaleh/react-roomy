@@ -5,15 +5,15 @@ export default  class PostRoomButton extends Component{
       super(props);
   }
   render(){
-      return <div>
-          <div className="">
+      return <div className="post-room-button">
+
               <Link to='/post-room'>
-                  <a  className="btn btn-ghost"    >Post a room</a>
+                  <a  className="btn btn-ghost"  href="#"  >Post a room</a>
 
               </Link>
 
 
-          </div>
+
 
       </div>
   }

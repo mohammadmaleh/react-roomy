@@ -13,58 +13,54 @@ var HomePage = React.createClass({
 
       <section className="section-features">
         <div className="row">
-          <h2>Get food fast &mdash; not fast food</h2>
+          <h2>Book unique homes &mdash; experience a city like a local.</h2>
           <p className="long-copy">
-            Hello, we’re Omnifood, your new premium food delivery service. We know you’re always busy. No time for cooking. So let us take care of that, we’re really good at it, we promise!
+            Hello, we’re Roomy, your new premium Rooms searching platform. We know you’re always busy. <br/> And it's hard to find a new place to stay in your new adventure. So let us take care of that, we’re really good at it, we promise!
           </p>
 
         </div>
         <div className="row">
-          <div className="small-2 large-3 columns box">
-            <i className="fa fa-fw  fa-question icon-big"/>
+          <div className="small-6 large-3 columns box">
+            <i className="fa fa-fw  fa-clock-o icon-big"/>
 
 
-            <h3>Up to 365 days/year</h3>
+            <h3>Up to 365 days/year support</h3>
             <p>
-              Never cook again! We really mean that. Our subscription plans include up to 365 days/year coverage. You can also choose to order more flexibly if that's your style.
-            </p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
           </div>
-          <div className=" small-2 large-3 columns box">
-            <i className="fa fa-fw  fa-question icon-big"/>
+          <div className=" small-5 large-3 columns box">
+            <i className="fa fa-fw  fa-mouse-pointer icon-big"/>
 
-            <h3>Ready in 20 minutes</h3>
+            <h3>Book your room in 3 clicks</h3>
             <p>
-              You're only twenty minutes away from your delicious and super healthy meals delivered right to your home. We work with the best chefs in each town to ensure that you're 100% happy.
-            </p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
           </div>
-          <div className=" small-2 large-3 columns box">
-            <i className="fa fa-fw  fa-question icon-big"/>
+          <div className=" small-6 large-3 columns box">
+            <i className="fa fa-fw  fa-plane icon-big"/>
 
-            <h3>100% organic</h3>
+            <h3>Supports over 50 cities</h3>
             <p>
-              All our vegetables are fresh, organic and local. Animals are raised without added hormones or antibiotics. Good for your health, the environment, and it also tastes better!
-
-            </p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
           </div>
-          <div className=" small-2 large-3 columns box">
-            <i className="fa fa-fw  fa-question icon-big"/>
+          <div className=" small-5 large-3 columns box float-left">
+            <i className="fa fa-fw  fa-dollar icon-big"/>
 
-            <h3>Order anything</h3>
+            <h3>Save up to 50%</h3>
             <p>
-              We don't limit your creativity, which means you can order whatever you feel like. You can also choose from our menu containing over 100 delicious meals. It's up to you!
-            </p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
           </div>
         </div>
       </section>
 
       <section className="section-testimonials">
         <div className="row">
-          <h2>Our customers can't live without us</h2>
+          <h2>Our customers are happy with us</h2>
         </div>
         <div className="row">
-          <div className="small-3 large-3 columns box">
+          <div className="small-4 large-4 columns box">
             <blockquote>
-              Omnifood is just awesome! I just launched a startup which leaves me with no time for cooking, so Omnifood is a life-saver. Now that I got used to it, I couldn't live without my daily meals!
+
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
               <cite>
                 <img src={require('../assets/images/customer-1.jpg')} alt=""/>
                   Alberto Duncan
@@ -73,7 +69,8 @@ var HomePage = React.createClass({
           </div>
           <div className="small-4 large-4 columns">
             <blockquote>
-              Inexpensive, healthy and great-tasting meals, delivered right to my home. We have lots of food delivery here in Lisbon, but no one comes even close to Omifood. Me and my family are so in love!
+
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
               <cite>
                 <img src={require('../assets/images/customer-2.jpg')} alt=""/>
                   Joana Silva
@@ -82,7 +79,8 @@ var HomePage = React.createClass({
           </div>
           <div className="small-4 large-4 columns">
             <blockquote>
-              I was looking for a quick and easy food delivery service in San Franciso. I tried a lot of them and ended up with Omnifood. Best food delivery service in the Bay Area. Keep up the great work!
+
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
               <cite>
                 <img src={require('../assets/images/customer-3.jpg')} alt=""/>
                   Milton Chapman

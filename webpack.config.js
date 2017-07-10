@@ -13,6 +13,7 @@ const isProduction = nodeEnv === 'production';
 const jsSourcePath = path.join(__dirname, './app');
 const buildPath = path.join(__dirname, './public');
 const imgPath = path.join(__dirname, './app/assets/images');
+const fontPath = path.join(__dirname, './app/assets/fonts');
 const iconPath = path.join(__dirname, './app/assets/icons');
 const sourcePath = path.join(__dirname, './app');
 
@@ -68,25 +69,34 @@ const rules = [
     {
         test: /\.(png|gif|jpg|svg)$/,
         include: imgPath,
-        use: 'url-loader?limit=20480&name=assets/[name]-[hash].[ext]',
+        use: 'url-loader?limit=20480&name=assets/images/[name]-[hash].[ext]',
     },
 
     {
+
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         use: [
             {
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
-                    mimetype: 'application/font-woff'
+                    mimetype: 'application/font-woff',
+                    name:'assets/fonts/[name]-[hash].[ext]'
                 }
             }
+
         ]
     },
     {
+
         test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+
         use: [
-            { loader: 'file-loader' }
+            { loader: 'file-loader',
+                options: {
+                    limit: 10000,
+                    name:'assets/fonts/[name]-[hash].[ext]'
+                }}
         ]
     }
 ];

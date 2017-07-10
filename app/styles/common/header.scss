@@ -2,22 +2,66 @@
   width :100%;
   height:60px;
   background-color: #e74c3c;
+  .row {
+    margin: 0;
+    height: initial;
+    height: 60px;
+  }
+
   .logo{
-    width: 8%;
     display: inline-block;
+    padding-top: 5px;
+    margin-right: 10px;
     img{
-      width: 100%;
+      width: 90px;
       margin-top: 1px;
       margin-left: 10px;
     }
   }
+  .personal-links{
+    display: inline-block;
+    color: $white-color;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    a{
+      color: $white-color;
+      transition: color 0.5s , border-color 0.5s;
+      &:first-child{
+        margin-right: 5px;
+      }
+      &:hover{
+        color: $orange-color;
+      }
+      img{
+        height: 40px;
+        border-radius: 50%;
+        margin-left: 10px;
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+    };
+  }
   .header-button-group{
-    width: 21%;
+    width: 310px;
+
+    min-width: 310px;
     float: right;
     height: 100%;
     padding-top: 7px;
-    .sign-in-button,.sign-up-button{
+    .sign-in-button,.sign-up-button,.post-room-button,sign-in-button{
       display: inline-block;
+      float: right;
     }
+  }
+}
+@media (max-width: 750px) {
+  .header{
+    height: 120px;
+  }
+}
+@media (max-width: 430px) {
+  .header{
+    height: 180px;
   }
 }

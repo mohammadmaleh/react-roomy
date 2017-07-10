@@ -47,25 +47,36 @@ class Header extends Component {
         let buttonGroup = null ;
         if (this.state.loggedIn){
             buttonGroup =  <div>
-                    <PostRoomButton/>
                 <SignOutButton/>
+
+                <PostRoomButton/>
                 </div>
         }
         else {
             buttonGroup =  <div>
-                    <SignInButton/>
-                    <SignUpButton/>
+                <SignUpButton/>
+
+                <SignInButton/>
                 </div>
         }
         return (
             <div className="header">
-                <Link to='/' className="logo" >
+                <div className="">
+                    <Link to='/' className="logo" >
 
-                    <img src={require("../assets/images/logo.png")}  alt=""/>
-                </Link>
-                <div className="header-button-group">
-                    {buttonGroup}
+                        <img src={require("../assets/images/logo.png")}  alt=""/>
+                    </Link>
+                    <div className="personal-links">
+                         <a href="https://github.com/mohammadmaleh">
+                            <img src={require('../assets/images/mohammadMaleh.jpg')} alt=""/>
+                            Mohammad Maleh
+                         </a> <a href="https://github.com/mohammadmaleh/react-roomy">Source Code</a>
+                    </div>
+                    <div className="header-button-group">
+                        {buttonGroup}
+                    </div>
                 </div>
+
             </div>
         )
     }

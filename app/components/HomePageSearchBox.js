@@ -62,7 +62,19 @@ class HomePageSearchBox extends Component{
         });
     }
     handleCity(e){
+
         this.setState({city:e.target.value})
+        console.log(e.key)
+        if(e.key === 'Enter'){
+            this.handleSubmit(e)
+            console.log(this)
+            this.props.history.push("/search-page")
+
+            setTimeout(()=>{
+
+            },1000)
+        }
+
 
     }
     render () {
@@ -80,7 +92,7 @@ class HomePageSearchBox extends Component{
                             {/*options={['istanbul', 'berlin', 'urfa', 'Ringo']}*/}
                             {/*maxVisible={2}*/}
                         {/*/>*/}
-                        <input type="text" onChange={this.handleCity}/>
+                        <input type="text" onKeyPress={this.handleCity}/>
                     </div>
                     <div className="column large-2 main-search-box-item">
                         <p>Check in</p>
@@ -126,4 +138,8 @@ class HomePageSearchBox extends Component{
         )
     }
 }
-export default connect()(HomePageSearchBox)
+export default connect(
+    (state) => {
+        return state;
+    }
+)(HomePageSearchBox);

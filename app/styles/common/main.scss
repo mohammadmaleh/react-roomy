@@ -4,6 +4,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+.columns:last-child:not(:first-child) {
+  float: left !important;
+}
 html{
   background-color: #fff;
   color: #555;
@@ -30,6 +33,17 @@ html{
   background-color: $white-color;
   border: 1px solid $white-color;
   margin-right: 15px;
+}
+.btn-success:link,.btn-success:visited {
+  background-color: #2ecc71!important;
+  border: 1px solid #2ecc71!important;
+  margin-right: 15px;
+  color: $white-color!important;
+  &:hover,&:active{
+    background-color: #2ecc71!important;
+    border : 1px solid #2ecc71!important; /* to make* to make the two buttons the same hight and width */
+
+  }
 }
 .btn-ghost:link,.btn-ghost:visited {
   border : 1px solid $white-color;
@@ -83,4 +97,8 @@ html{
     background-color: $red-color;
     border-color:$red-color ;
   }
+}
+.page-loader{
+  text-align: center;
+  padding-top: 100px;
 }
