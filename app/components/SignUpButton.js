@@ -1,16 +1,17 @@
 /**
  * Created by mohammadmaleh on 29/05/2017.
  */
-import React,{Component} from 'react'
+var React = require('react');
+
 import {Link}from 'react-router-dom'
+var SignUpButton = React.createClass({
 
-export default class SignOutButton extends Component{
-
-    render () {
+    render: function () {
         return (
            <div className="sign-up-button">
                <Link to="/sign-up" className="btn btn-full">Sign up</Link>
            </div>
         )
     }
-};
+});
+module.exports = SignUpButton;
