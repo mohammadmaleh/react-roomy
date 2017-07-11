@@ -16,7 +16,6 @@ let notificationOpts = {
 };
 class PostRoomPage extends Component{
 
-
     constructor(props){
         super(props)
         this.postARoom= this.postARoom.bind(this)
@@ -160,8 +159,6 @@ class PostRoomPage extends Component{
         })
         return validMainImage && validCity && validOldPrice && validCapacity && validSize
     }
-
-
     postARoom(e){
         e.preventDefault()
         if (this.validation())
@@ -229,8 +226,6 @@ class PostRoomPage extends Component{
     componentDidMount() {
       this.notificationSystem = this.refs.notificationSystem;
     }
-
-
     render(){
 
         let dropBox = null ;

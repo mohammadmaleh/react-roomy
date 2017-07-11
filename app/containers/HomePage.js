@@ -1,7 +1,8 @@
-var React = require('react')
+import React,{Component} from 'react'
 import HomePageSearchBox from'HomePageSearchBox'
-var HomePage = React.createClass({
-  render:()=>{
+export default  class HomePage extends Component{
+
+  render(){
     return(
     <div className="home-page">
       <section>
@@ -92,5 +93,4 @@ var HomePage = React.createClass({
     </div>
     )
   }
-})
-export default HomePage
+}

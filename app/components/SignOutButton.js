@@ -1,31 +1,25 @@
 /**
  * Created by mohammadmaleh on 29/05/2017.
  */
-var React = require('react');
+import React,{Component} from 'react'
 var {connect} =   require('react-redux');
 import{logoutUser} from 'actions'
-var SignOutButton = React.createClass({
-    handleSignOut:function(e){
+class SignOutButton extends Component{
+
+    handleSignOut(e){
         e.preventDefault();
         let {dispatch} =  this.props;
-
         dispatch(logoutUser())
     }
 
-    ,
-    render: function () {
-
-
+    render () {
         return (
             <div className="sign-in-button float-right">
                 <a  className="btn btn-ghost"  href="#"  onClick={this.handleSignOut}>Sign out</a>
-
-
             </div>
-
         )
     }
-});
+};
 export default connect(
     (state) => {
         return state;
